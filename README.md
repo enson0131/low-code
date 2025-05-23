@@ -26,6 +26,25 @@
 }
 ```
 
+# Schema 数据结构
+
+```json
+{
+  "type": "page", // 
+  "body": [
+    {
+      "type": "input-text",
+      "name": "input1",
+      "label": "我是一个输入框",
+      "placeholder": "请输入",
+    }
+  ]
+}
+
+```
+`type`, `data`, `body` 这三个字段组成的 JSON 对象，便是一个 Schema，它由 `type` 字段作为标识，指明当前 Schema 是 `Page` 组件节点
+
+根据不同的 type 渲染不同的组件
 
 # 参考文章
 - https://juejin.cn/post/7326432875955437579?searchId=20250523094352970A3216EE0258AAB14A
