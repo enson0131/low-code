@@ -1,50 +1,15 @@
-import {render as renderAmis, type SchemaObject} from 'amis';
-import './App.css';
-import {Editor} from 'amis-editor';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import './app.module.less';
+import Editor from './packages/Editor';
+import jsonSchema from './data.json';
 
 function App() {
-  const [value, setValue] = useState<SchemaObject>({
-    type: 'page',
-    body: [
-      {
-        type: 'tpl',
-        tpl: 'Hello World!'
-      }
-    ]
-  });
+  const [modelValue, setModelValue] = useState<any>(jsonSchema);
   return (
-    <>
-     <Editor value={value} onChange={setValue} />
-     <div>1</div>
-    </>
-    // <div>
-    //     {renderAmis(
-    //      {
-    //        type: "page",
-    //        body: [
-    //         {
-    //           type: "tpl",
-    //           tpl: "Hello World!"
-    //         },
-    //         {
-    //           type: "divider"
-    //         },
-    //         // {
-    //         //   type: "form",
-    //         //   body: [
-    //         //     {
-    //         //       type: "input-text",
-    //         //       name: "name",
-    //         //       label: "姓名"
-    //         //     }
-    //         //   ]
-    //         // }
-    //       ]
-    //     }
-    //     )}
-    //   </div>
-  )
+    <div styleName="app-container">
+      <Editor modelValue={modelValue} onChange={setModelValue} />
+    </div>
+  );
 }
 
-export default App
+export default App;

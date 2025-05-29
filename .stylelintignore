@@ -1,0 +1,13 @@
+dist/
+node_modules/
+docs/
+build/
+public/**
+
+# 其他文件类型
+*.min.css
+*.js
+*.jpg
+*.png
+*.json
+*.svg
